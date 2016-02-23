@@ -1,0 +1,8 @@
+netifaces
+cffi==1.2.1
+numpy==1.10.1
+pycparser==2.14
+scipy==0.16.0
+sounddevice==0.2.1
+wheel==0.24.0
+soundfile
