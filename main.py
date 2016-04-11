@@ -7,11 +7,6 @@ import numpy as np
 import netifaces as ni
 
 
-def getNetworkIp():
-    ni.ifaddresses('eth0')
-    ip = ni.ifaddresses('eth0')[2][0]['addr']
-    return ip
-
 
 def get_config(config_file='recording.cfg'):
     full_path = os.path.join(os.getcwd(), config_file)
@@ -59,7 +54,7 @@ def get_threshold(cfg):
 def process_recording(recorder, recording, threshold, save_dir):
     print recorder.rms(recording)
     if recorder.rms(recording) > threshold:
-        timestamp = os.path.join(save_dir, time.strftime("%Y%b%d-%H_%M_%S")+'-'+str(getNetworkIp()) + '.wav')
+        timestamp = os.path.join(save_dir, time.strftime("%Y%b%d-%H_%M_%S")+'.wav')
         recorder.save_wav(recording, timestamp)
         recorder.upload_file()
 
