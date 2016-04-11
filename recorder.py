@@ -10,8 +10,8 @@ def parse_upload(fullname,filename):
         connection = httplib.HTTPSConnection('api.parse.com', 443)
         connection.connect()
         connection.request('POST', '/1/files/'+filename,open(fullname, 'rb').read(), {
-        "X-Parse-Application-Id": "vkJKGpWnsitOVpKzpWwUO6BrV1gb6zeyQEr3lS1m",
-        "X-Parse-REST-API-Key": "qU6QfcfUD6XIna6T6fgsXC6h6bFJzYB9ojJCWV2M",
+        "X-Parse-Application-Id": "o26advQwNjIuNpOP70nGcUO8nEoSGp32dGDtBgq3",
+        "X-Parse-REST-API-Key": "lnYlCzWfj8wKjyqMSGotXQVfwXyNwpTxssqXpW2Q",
         "Content-Type": "File"
         })
         rawreply = connection.getresponse().read()
@@ -19,8 +19,8 @@ def parse_upload(fullname,filename):
         #print (result)
         connection.request('POST', '/1/classes/BOX1', json.dumps({
         "audio_file": {"name": result['name'],"__type": "File"}}), {
-        "X-Parse-Application-Id": "vkJKGpWnsitOVpKzpWwUO6BrV1gb6zeyQEr3lS1m",
-        "X-Parse-REST-API-Key": "qU6QfcfUD6XIna6T6fgsXC6h6bFJzYB9ojJCWV2M",
+        "X-Parse-Application-Id": "o26advQwNjIuNpOP70nGcUO8nEoSGp32dGDtBgq3",
+        "X-Parse-REST-API-Key": "lnYlCzWfj8wKjyqMSGotXQVfwXyNwpTxssqXpW2Q",
         "Content-Type": "application/json"})
         rawreply2 = connection.getresponse().read()
         results = json.loads(rawreply2.decode())
