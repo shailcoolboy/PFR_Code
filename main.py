@@ -1,4 +1,4 @@
-import configparser
+import ConfigParser as configparser
 import os
 import recorder
 import sys
